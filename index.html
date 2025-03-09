@@ -363,6 +363,14 @@ p {
         background-color: #d5006d;
         color: white;
     }
+         @keyframes slide {
+          0% {
+              transform: translateX(0);
+          }
+          100% {
+              transform: translateX(-50%); /* Move left by half the total width */
+          }
+      }
     </style>
 </head>
 <body>
@@ -552,7 +560,43 @@ p {
         <img src="c.jpg" alt="Designs Image">
         <button class="btn">Beauty That Lasts</button>
     </a>
+<section style="overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; position: relative;">
+  <div style="display: flex; width: calc(140px * 6); animation: slide 12s linear infinite; position: absolute;">
+      <!-- Cards -->
+      <div style="flex-shrink: 0; width: 140px; padding: 20px; background-color: #f6e65d; border-radius: 15px; margin: 0 10px; box-shadow: 0 0 15px pink; text-align: center;">
+          <i class="fas fa-truck" style="font-size: 50px; color: #d5006d; margin-bottom: 10px;"></i>
+          <h5 style="font-size: 0.9em; color: #333; margin: 10px 0;">Fast Delivery</h5>
+          <p style="font-size: 0.8em; color: #555;">Get your luxury outfits delivered swiftly to your doorstep.</p>
+      </div>
+      <div style="flex-shrink: 0; width: 140px; padding: 20px; background-color: #f6e65d; border-radius: 15px; margin: 0 10px; box-shadow: 0 0 15px pink; text-align: center;">
+          <i class="fas fa-tshirt" style="font-size: 50px; color: #d5006d; margin-bottom: 10px;"></i>
+          <h5 style="font-size: 0.9em; color: #333; margin: 10px 0;">Latest Trends</h5>
+          <p style="font-size: 0.8em; color: #555;">Stay updated with the latest fashion styles.</p>
+      </div>
+      <div style="flex-shrink: 0; width: 140px; padding: 20px; background-color: #f6e65d; border-radius: 15px; margin: 0 10px; box-shadow: 0 0 15px pink; text-align: center;">
+          <i class="fas fa-star" style="font-size: 50px; color: #d5006d; margin-bottom: 10px;"></i>
+          <h5 style="font-size: 0.9em; color: #333; margin: 10px 0;">Best Quality</h5>
+          <p style="font-size: 0.8em; color: #555;">We offer only the highest quality materials and craftsmanship.</p>
+      </div>
+      <div style="flex-shrink: 0; width: 140px; padding: 20px; background-color: #f6e65d; border-radius: 15px; margin: 0 10px; box-shadow: 0 0 15px pink; text-align: center;">
+          <i class="fas fa-heart" style="font-size: 50px; color: #d5006d; margin-bottom: 10px;"></i>
+          <h5 style="font-size: 0.9em; color: #333; margin: 10px 0;">Customer Love</h5>
+          <p style="font-size: 0.8em; color: #555;">Our customers adore our unique styles.</p>
+      </div>
+      <div style="flex-shrink: 0; width: 140px; padding: 20px; background-color: #f6e65d; border-radius: 15px; margin: 0 10px; box-shadow: 0 0 15px pink; text-align: center;">
+          <i class="fas fa-tags" style="font-size: 50px; color: #d5006d; margin-bottom: 10px;"></i>
+          <h5 style="font-size: 0.9em; color: #333; margin: 10px 0;">Great Deals</h5>
+          <p style="font-size: 0.8em; color: #555;">Shop the best deals on luxury fashion.</p>
+      </div>
+      <div style="flex-shrink: 0; width: 140px; padding: 20px; background-color: #f6e65d; border-radius: 15px; margin: 0 10px; box-shadow: 0 0 15px pink; text-align: center;">
+          <i class="fas fa-gift" style="font-size: 50px; color: #d5006d; margin-bottom: 10px;"></i>
+          <h5 style="font-size: 0.9em; color: #333; margin: 10px 0;">Special Offers</h5>
+          <p style="font-size: 0.8em; color: #555;">Exclusive offers just for you!</p>
+      </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </div>
 
+</section>
      <br>
 
     
