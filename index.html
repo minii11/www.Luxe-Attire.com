@@ -560,42 +560,110 @@ p {
         <img src="c.jpg" alt="Designs Image">
         <button class="btn">Beauty That Lasts</button>
     </a>
-<section style="overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; position: relative;">
-    <div style="display: flex; width: calc(120px * 6); animation: slide 10s linear infinite; position: absolute;">
+
+    <section style="overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; width: 100%; padding: 0 10px;">
+    <div style="display: flex; animation: slide 10s linear infinite; position: absolute; flex-wrap: nowrap;">
         <!-- Cards -->
-        <div style="flex-shrink: 0; width: 120px; padding: 10px; background-color: #f6e65d; border-radius: 15px; margin: 0 5px; box-shadow: 0 0 15px pink; text-align: center;">
-            <img src="path/to/pink-delivery-truck-icon.png" alt="Fast Delivery" style="width: 40px; height: 40px; margin-bottom: 5px;">
-            <h5 style="font-size: 0.8em; color: #333; margin: 5px 0;">Fast Delivery</h5>
-            <p style="font-size: 0.7em; color: #555;">Get your luxury outfits delivered swiftly.</p>
+        <div class="card">
+            <img src="path/to/pink-delivery-truck-icon.png" alt="Fast Delivery" class="card-icon">
+            <h5 class="card-title">Fast Delivery</h5>
+            <p class="card-text">Get your luxury outfits delivered swiftly.</p>
         </div>
-        <div style="flex-shrink: 0; width: 120px; padding: 10px; background-color: #f6e65d; border-radius: 15px; margin: 0 5px; box-shadow: 0 0 15px pink; text-align: center;">
-            <img src="path/to/pink-latest-trends-icon.png" alt="Latest Trends" style="width: 40px; height: 40px; margin-bottom: 5px;">
-            <h5 style="font-size: 0.8em; color: #333; margin: 5px 0;">Latest Trends</h5>
-            <p style="font-size: 0.7em; color: #555;">Stay updated with the latest styles.</p>
+        <div class="card">
+            <img src="path/to/pink-latest-trends-icon.png" alt="Latest Trends" class="card-icon">
+            <h5 class="card-title">Latest Trends</h5>
+            <p class="card-text">Stay updated with the latest styles.</p>
         </div>
-        <div style="flex-shrink: 0; width: 120px; padding: 10px; background-color: #f6e65d; border-radius: 15px; margin: 0 5px; box-shadow: 0 0 15px pink; text-align: center;">
-            <img src="path/to/pink-best-quality-icon.png" alt="Best Quality" style="width: 40px; height: 40px; margin-bottom: 5px;">
-            <h5 style="font-size: 0.8em; color: #333; margin: 5px 0;">Best Quality</h5>
-            <p style="font-size: 0.7em; color: #555;">We offer only the best materials.</p>
+        <div class="card">
+            <img src="path/to/pink-best-quality-icon.png" alt="Best Quality" class="card-icon">
+            <h5 class="card-title">Best Quality</h5>
+            <p class="card-text">We offer only the best materials.</p>
         </div>
-        <div style="flex-shrink: 0; width: 120px; padding: 10px; background-color: #f6e65d; border-radius: 15px; margin: 0 5px; box-shadow: 0 0 15px pink; text-align: center;">
-            <img src="path/to/pink-customer-love-icon.png" alt="Customer Love" style="width: 40px; height: 40px; margin-bottom: 5px;">
-            <h5 style="font-size: 0.8em; color: #333; margin: 5px 0;">Customer Love</h5>
-            <p style="font-size: 0.7em; color: #555;">Our customers adore our styles.</p>
+        <div class="card">
+            <img src="path/to/pink-customer-love-icon.png" alt="Customer Love" class="card-icon">
+            <h5 class="card-title">Customer Love</h5>
+            <p class="card-text">Our customers adore our styles.</p>
         </div>
-        <div style="flex-shrink: 0; width: 120px; padding: 10px; background-color: #f6e65d; border-radius: 15px; margin: 0 5px; box-shadow: 0 0 15px pink; text-align: center;">
-            <img src="path/to/pink-great-deals-icon.png" alt="Great Deals" style="width: 40px; height: 40px; margin-bottom: 5px;">
-            <h5 style="font-size: 0.8em; color: #333; margin: 5px 0;">Great Deals</h5>
-            <p style="font-size: 0.7em; color: #555;">Shop the best deals.</p>
+        <div class="card">
+            <img src="path/to/pink-great-deals-icon.png" alt="Great Deals" class="card-icon">
+            <h5 class="card-title">Great Deals</h5>
+            <p class="card-text">Shop the best deals.</p>
         </div>
-        <div style="flex-shrink: 0; width: 120px; padding: 10px; background-color: #f6e65d; border-radius: 15px; margin: 0 5px; box-shadow: 0 0 15px pink; text-align: center;">
-            <img src="path/to/pink-special-offers-icon.png" alt="Special Offers" style="width: 40px; height: 40px; margin-bottom: 5px;">
-            <h5 style="font-size: 0.8em; color: #333; margin: 5px 0;">Special Offers</h5>
-            <p style="font-size: 0.7em; color: #555;">Exclusive offers for you!</p>
+        <div class="card">
+            <img src="path/to/pink-special-offers-icon.png" alt="Special Offers" class="card-icon">
+            <h5 class="card-title">Special Offers</h5>
+            <p class="card-text">Exclusive offers for you!</p>
         </div>
     </div>
-   
+
+    <style>
+        .card {
+            flex-shrink: 0;
+            width: 120px;
+            padding: 10px;
+            background-color: #f6e65d;
+            border-radius: 15px;
+            margin: 0 5px;
+            box-shadow: 0 0 15px pink;
+            text-align: center;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+        .card-title {
+            font-size: 0.8em;
+            color: #333;
+            margin: 5px 0;
+        }
+        .card-text {
+            font-size: 0.7em;
+            color: #555;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Slide left */
+            }
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .card {
+                width: 100px; /* Adjust card width on smaller screens */
+                padding: 8px;
+            }
+            .card-title {
+                font-size: 0.75em;
+            }
+            .card-text {
+                font-size: 0.65em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                width: 80px; /* Even smaller width for very small screens */
+                padding: 5px;
+            }
+            .card-icon {
+                width: 30px;
+                height: 30px;
+            }
+            .card-title {
+                font-size: 0.7em;
+            }
+            .card-text {
+                font-size: 0.6em;
+            }
+        }
+    </style>
 </section>
+
      <br>
 
     
