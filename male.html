@@ -44,16 +44,16 @@
             background: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            width: 67.5%; /* Increased width for larger items */
-            margin: 10px 0;
-            padding: 24px; /* Increased padding */
-            position: relative;
+            width: 45%; /* Two products per row */
+            margin: 5px 0;
+            padding: 16px; /* Increased padding */
+            position: center;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .product img {
-            width: 100%; /* Maintain aspect ratio */
-            height: 240px; /* Increased height for uniformity */
+            width: 200%; /* Maintain aspect ratio */
+            height: 340px; /* Increased height for uniformity */
             object-fit: contain; /* Ensure the entire image is visible */
             border-radius: 8px;
         }
@@ -71,7 +71,7 @@
         }
         .popup-content {
             background: white;
-            padding: 192px; /* Increased padding */
+            padding: 48px; /* Increased padding */
             border-radius: 8px;
             text-align: center;
             position: relative;
@@ -88,7 +88,7 @@
         }
         .image-container img {
             max-width: 100%; /* Ensure it doesn't exceed container */
-            height: 100%; /* Set height to fill */
+            max-height: 500px; /* Set a max height */
             object-fit: contain; /* Maintain aspect ratio */
         }
         .close {
@@ -156,7 +156,7 @@
 <!-- Male Clothing Section -->
 <div class="section">
     <div class="section-header">
-        <div class="section-title" style="font-size: 72px;">Male Clothing Section</div> <!-- Increased font size -->
+        <div class="section-title">Male Clothing Section</div>
         <button class="view-all-button">Explore Our Collection</button>
     </div>
     <div class="container" id="maleProducts">
@@ -209,7 +209,7 @@
     <div class="popup-content" onclick="event.stopPropagation();">
         <span class="close" onclick="closePopup()">&times;</span>
         <div class="image-container">
-            <img id="popupImage" onclick="closePopup()" style="height: 2000px;"> <!-- Increased height -->
+            <img id="popupImage" onclick="closePopup()">
         </div>
         <a id="whatsappLink" href="#" class="order-button">Place Order</a>
     </div>
