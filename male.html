@@ -44,16 +44,16 @@
             background: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            width: 48%; /* Adjusted to fit two products per row */
-            margin: 20px 1%; /* Margin adjusted for spacing */
-            padding: 32px; /* Increased padding */
+            width: calc(50% - 20px); /* Two products per row with spacing */
+            margin: 10px; /* Margin for spacing */
+            padding: 20px; /* Increased padding */
             position: relative;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .product img {
             width: 100%; /* Maintain aspect ratio */
-            height: 480px; /* Increased height for uniformity */
+            height: 300px; /* Set height for uniformity */
             object-fit: contain; /* Ensure the entire image is visible */
             border-radius: 8px;
         }
@@ -125,7 +125,7 @@
         /* Responsive Styles */
         @media (max-width: 600px) {
             .product {
-                width: 48%; /* Ensure two products per row */
+                width: calc(50% - 10px); /* Ensure two products per row on small screens */
             }
         }
     </style>
