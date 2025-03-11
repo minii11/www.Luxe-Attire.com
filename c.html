@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cosmetics Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .section {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-title {
+            font-size: 36px; /* Increased font size */
+            font-weight: bold;
+        }
+        .view-all-button {
+            background-color: #ff4081; /* Pink color */
+            color: white;
+            border: none;
+            padding: 16px 32px; /* Increased padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 45%; /* Two products per row */
+            margin: 10px 0;
+            padding: 16px; /* Increased padding */
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%; /* Maintain aspect ratio */
+            height: 240px; /* Increased height for uniformity */
+            object-fit: contain; /* Ensure the entire image is visible */
+            border-radius: 8px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: white;
+            padding: 48px; /* Increased padding */
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            max-width: 90%; /* Responsive width for mobile */
+            width: auto; /* Allow image to take full width */
+        }
+        .image-container {
+            width: 100%;
+            max-height: 100%; /* Remove max height restriction */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide overflow */
+        }
+        .image-container img {
+            max-width: 100%; /* Ensure it doesn't exceed container */
+            max-height: 100%; /* Adjust height to fit */
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 32px; /* Increased font size */
+        }
+        .order-button {
+            background: linear-gradient(to right, #ff4081, #ffeb3b); /* Pink to Yellow gradient */
+            color: white;
+            border: none;
+            padding: 16px 32px; /* Increased padding */
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 24px; /* Increased margin to ensure visibility */
+            width: 100%; /* Full width for better visibility */
+            font-size: 30px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+
+    <section style="text-align: center; margin-bottom: 20px;">
+        <div style="font-size: 60px; font-family: 'Arial', sans-serif; color: #D81B60; font-weight: bold; text-shadow: 3px 3px 8px rgba(255, 20, 147, 0.7);">
+            ✨ Explore Our Cosmetics Collection!✨
+        </div>
+        <div style="font-size: 50px; font-family: 'Arial', sans-serif; color: #555; margin-top: 5px;">
+            Discover the latest beauty trends!
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="section-header">
+            <div class="section-title" style="font-size: 50px;">Cosmetics Section</div>
+            <button class="view-all-button">Explore Our Collection</button>
+        </div>
+        <div class="container" id="cosmeticsProducts">
+
+            <div class="product" onclick="showPopup('Cosmetic Product 1', 'https://www.fuchsiamagazine.com/wp-content/uploads/2022/12/750-x-350-M-Products.jpg')">
+                <img src="https://www.fuchsiamagazine.com/wp-content/uploads/2022/12/750-x-350-M-Products.jpg" alt="Cosmetic Product 1">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 1</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 1,499</p>
+                <p style="font-size: 16px; color: #555;">High-quality cosmetics for all skin types.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+
+            <div class="product" onclick="showPopup('Cosmetic Product 2', 'https://th.bing.com/th/id/OIP.v8uB5742GOher9_3n0JvbgHaF7?w=173&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th/id/OIP.v8uB5742GOher9_3n0JvbgHaF7?w=173&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Cosmetic Product 2">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 2</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 1,999</p>
+                <p style="font-size: 16px; color: #555;">Perfect for a flawless finish.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+
+            <div class="product" onclick="showPopup('Cosmetic Product 3', 'https://th.bing.com/th/id/OIP.ZJ7RCc4EKYxNjSDx32DpwwAAAA?w=167&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th/id/OIP.ZJ7RCc4EKYxNjSDx32DpwwAAAA?w=167&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Cosmetic Product 3">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 3</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 2,499</p>
+                <p style="font-size: 16px; color: #555;">Long-lasting and vibrant colors.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+
+            <div class="product" onclick="showPopup('Cosmetic Product 4', 'https://th.bing.com/th/id/OIP.-oH1ezGM1kKB-VUSaUgw5gHaIp?w=143&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th/id/OIP.-oH1ezGM1kKB-VUSaUgw5gHaIp?w=143&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Cosmetic Product 4">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 4</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 1,299</p>
+                <p style="font-size: 16px; color: #555;">Perfect for everyday use.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+
+            <div class="product" onclick="showPopup('Cosmetic Product 5', 'https://th.bing.com/th/id/OIP.2vPQKhlWE3QwACuxnaia3QHaEK?w=285&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th/id/OIP.2vPQKhlWE3QwACuxnaia3QHaEK?w=285&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Cosmetic Product 5">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 5</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 1,899</p>
+                <p style="font-size: 16px; color: #555;">Ideal for sensitive skin.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+
+            <div class="product" onclick="showPopup('Cosmetic Product 6', 'https://th.bing.com/th?id=OIF.9JKxOY5KmNLB2%2fDsPpqJhQ&w=183&h=183&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th?id=OIF.9JKxOY5KmNLB2%2fDsPpqJhQ&w=183&h=183&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Cosmetic Product 6">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 6</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 1,499</p>
+                <p style="font-size: 16px; color: #555;">Nourishing formulas for healthy skin.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+
+            <div class="product" onclick="showPopup('Cosmetic Product 7', 'https://th.bing.com/th/id/OIF.U6ItwX4Grs0Q1fylHCU6ww?w=171&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th/id/OIF.U6ItwX4Grs0Q1fylHCU6ww?w=171&h=180&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Cosmetic Product 7">
+                <h3 style="font-size: 26px; color: #333;">Cosmetic Product 7</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 2,199</p>
+                <p style="font-size: 16px; color: #555;">Rich colors and smooth application.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+            <div class="product" onclick="showPopup('Anastasia Beverly Hills Liquid Lipstick', 'https://th.bing.com/th?id=OIF.%2fvpWTNiXaQZMn3%2fV5WAfAg&w=187&h=187&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+                <img src="https://th.bing.com/th?id=OIF.%2fvpWTNiXaQZMn3%2fV5WAfAg&w=187&h=187&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Anastasia Beverly Hills Liquid Lipstick">
+                <h3 style="font-size: 26px; color: #333;">Anastasia Beverly Hills Liquid Lipstick</h3>
+                <p style="font-size: 24px; color: #e91e63;">Price: Rs. 2,199</p>
+                <p style="font-size: 16px; color: #555;">Rich colors and smooth application.</p>
+                <button class="order-button">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation();">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div class="image-container">
+                <img id="popupImage" onclick="closePopup()">
+            </div>
+            <a id="whatsappLink" href="#" class="order-button">Place Order</a>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(title, imageUrl) {
+            document.getElementById('popupImage').src = imageUrl;
+            document.getElementById('whatsappLink').href = `https://wa.me/923558346493?text=I%20want%20to%20order%20${encodeURIComponent(title)}`;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
