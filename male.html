@@ -45,15 +45,15 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             width: 45%; /* Two products per row */
-            margin: 5px 0;
+            margin: 10px 0;
             padding: 16px; /* Increased padding */
-            position: center;
+            position: relative;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .product img {
-            width: 200%; /* Maintain aspect ratio */
-            height: 340px; /* Increased height for uniformity */
+            width: 100%; /* Maintain aspect ratio */
+            height: 240px; /* Increased height for uniformity */
             object-fit: contain; /* Ensure the entire image is visible */
             border-radius: 8px;
         }
@@ -88,7 +88,7 @@
         }
         .image-container img {
             max-width: 100%; /* Ensure it doesn't exceed container */
-            max-height: 500px; /* Set a max height */
+            height: 100%; /* Set height to fill */
             object-fit: contain; /* Maintain aspect ratio */
         }
         .close {
@@ -156,7 +156,7 @@
 <!-- Male Clothing Section -->
 <div class="section">
     <div class="section-header">
-        <div class="section-title">Male Clothing Section</div>
+        <div class="section-title" style="font-size: 72px;">Male Clothing Section</div> <!-- Increased font size -->
         <button class="view-all-button">Explore Our Collection</button>
     </div>
     <div class="container" id="maleProducts">
@@ -209,7 +209,7 @@
     <div class="popup-content" onclick="event.stopPropagation();">
         <span class="close" onclick="closePopup()">&times;</span>
         <div class="image-container">
-            <img id="popupImage" onclick="closePopup()">
+            <img id="popupImage" onclick="closePopup()" style="height: 500px;"> <!-- Increased height -->
         </div>
         <a id="whatsappLink" href="#" class="order-button">Place Order</a>
     </div>
