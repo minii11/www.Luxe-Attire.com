@@ -23,17 +23,17 @@
             align-items: center;
         }
         .section-title {
-            font-size: 72px; /* Increased font size */
+            font-size: 36px; /* Increased font size */
             font-weight: bold;
         }
         .view-all-button {
             background-color: #ff4081; /* Pink color */
             color: white;
             border: none;
-            padding: 32px 64px; /* Increased padding */
+            padding: 16px 32px; /* Increased padding */
             border-radius: 5px;
             cursor: pointer;
-            font-size: 36px; /* Increased font size */
+            font-size: 18px; /* Increased font size */
         }
         .container {
             display: flex;
@@ -44,16 +44,16 @@
             background: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            width: calc(50% - 20px); /* Two products per row with spacing */
-            margin: 10px; /* Margin for spacing */
-            padding: 20px; /* Increased padding */
+            width: 67.5%; /* Increased width for larger items */
+            margin: 10px 0;
+            padding: 24px; /* Increased padding */
             position: relative;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .product img {
             width: 100%; /* Maintain aspect ratio */
-            height: 300px; /* Set height for uniformity */
+            height: 240px; /* Increased height for uniformity */
             object-fit: contain; /* Ensure the entire image is visible */
             border-radius: 8px;
         }
@@ -71,7 +71,7 @@
         }
         .popup-content {
             background: white;
-            padding: 48px; /* Increased padding */
+            padding: 192px; /* Increased padding */
             border-radius: 8px;
             text-align: center;
             position: relative;
@@ -80,6 +80,7 @@
         }
         .image-container {
             width: 100%;
+            max-height: 600px; /* Max height for the image container */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,8 +88,8 @@
         }
         .image-container img {
             max-width: 100%; /* Ensure it doesn't exceed container */
-            height: auto; /* Maintain aspect ratio */
-            max-height: 80vh; /* Ensure it fits within viewport height */
+            height: 100%; /* Set height to fill */
+            object-fit: contain; /* Maintain aspect ratio */
         }
         .close {
             position: absolute;
@@ -101,12 +102,12 @@
             background: linear-gradient(to right, #ff4081, #ffeb3b); /* Pink to Yellow gradient */
             color: white;
             border: none;
-            padding: 32px 64px; /* Increased padding */
+            padding: 16px 32px; /* Increased padding */
             border-radius: 5px;
             cursor: pointer;
             margin-top: 24px; /* Increased margin to ensure visibility */
             width: 100%; /* Full width for better visibility */
-            font-size: 36px; /* Increased font size */
+            font-size: 18px; /* Increased font size */
         }
 
         @keyframes boxGlow {
@@ -120,13 +121,6 @@
 
         .glow-box {
             animation: boxGlow 1.5s infinite alternate;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 600px) {
-            .product {
-                width: calc(50% - 10px); /* Ensure two products per row on small screens */
-            }
         }
     </style>
 </head>
@@ -162,50 +156,50 @@
 <!-- Male Clothing Section -->
 <div class="section">
     <div class="section-header">
-        <div class="section-title">Male Clothing Section</div>
+        <div class="section-title" style="font-size: 72px;">Male Clothing Section</div> <!-- Increased font size -->
         <button class="view-all-button">Explore Our Collection</button>
     </div>
     <div class="container" id="maleProducts">
         <div class="product" onclick="showPopup('Traditional Sherwani', 'https://i.pinimg.com/originals/dc/65/a1/dc65a15dfdfcc8571c0f961c57e3c599.jpg')">
             <img src="https://i.pinimg.com/originals/dc/65/a1/dc65a15dfdfcc8571c0f961c57e3c599.jpg" alt="Traditional Sherwani">
-            <h3 style="font-size: 56px;">Traditional Sherwani</h3> <!-- Increased font size -->
-            <p style="font-size: 44px;">Rs. 3,499</p> <!-- Increased font size -->
-            <p style="font-size: 36px;">Elegant traditional sherwani for weddings.</p> <!-- Increased font size -->
+            <h3 style="font-size: 28px;">Traditional Sherwani</h3> <!-- Increased font size -->
+            <p style="font-size: 22px;">Rs. 3,499</p> <!-- Increased font size -->
+            <p style="font-size: 18px;">Elegant traditional sherwani for weddings.</p> <!-- Increased font size -->
             <button class="order-button">Order Now</button>
         </div>
         <div class="product" onclick="showPopup('Wedding Groom Suit', 'https://i.pinimg.com/originals/fb/08/59/fb0859ba07a2022628dc1adc095a05ab.jpg')">
             <img src="https://i.pinimg.com/originals/fb/08/59/fb0859ba07a2022628dc1adc095a05ab.jpg" alt="Wedding Groom Suit">
-            <h3 style="font-size: 56px;">Wedding Groom Suit</h3> <!-- Increased font size -->
-            <p style="font-size: 44px;">Rs. 4,999</p> <!-- Increased font size -->
-            <p style="font-size: 36px;">Stylish suit for grooms.</p> <!-- Increased font size -->
+            <h3 style="font-size: 28px;">Wedding Groom Suit</h3> <!-- Increased font size -->
+            <p style="font-size: 22px;">Rs. 4,999</p> <!-- Increased font size -->
+            <p style="font-size: 18px;">Stylish suit for grooms.</p> <!-- Increased font size -->
             <button class="order-button">Order Now</button>
         </div>
         <div class="product" onclick="showPopup('Casual Kurta', 'https://th.bing.com/th/id/OIP.pW2ID2y0icYeNHy4giCjuwHaLH?pid=ImgDet&w=190&h=285&c=7&dpr=1.8')">
             <img src="https://th.bing.com/th/id/OIP.pW2ID2y0icYeNHy4giCjuwHaLH?pid=ImgDet&w=190&h=285&c=7&dpr=1.8" alt="Casual Kurta">
-            <h3 style="font-size: 56px;">Casual Kurta</h3> <!-- Increased font size -->
-            <p style="font-size: 44px;">Rs. 1,199</p> <!-- Increased font size -->
-            <p style="font-size: 36px;">Comfortable kurta for casual wear.</p> <!-- Increased font size -->
+            <h3 style="font-size: 28px;">Casual Kurta</h3> <!-- Increased font size -->
+            <p style="font-size: 22px;">Rs. 1,199</p> <!-- Increased font size -->
+            <p style="font-size: 18px;">Comfortable kurta for casual wear.</p> <!-- Increased font size -->
             <button class="order-button">Order Now</button>
         </div>
         <div class="product" onclick="showPopup('Shalwar Kameez', 'https://libasgallery.com/admin/upload/products/sherwani-wedding-groom-1846a.jpg')">
             <img src="https://libasgallery.com/admin/upload/products/sherwani-wedding-groom-1846a.jpg" alt="Shalwar Kameez">
-            <h3 style="font-size: 56px;">Shalwar Kameez</h3> <!-- Increased font size -->
-            <p style="font-size: 44px;">Rs. 1,499</p> <!-- Increased font size -->
-            <p style="font-size: 36px;">Traditional wear for men.</p> <!-- Increased font size -->
+            <h3 style="font-size: 28px;">Shalwar Kameez</h3> <!-- Increased font size -->
+            <p style="font-size: 22px;">Rs. 1,499</p> <!-- Increased font size -->
+            <p style="font-size: 18px;">Traditional wear for men.</p> <!-- Increased font size -->
             <button class="order-button">Order Now</button>
         </div>
         <div class="product" onclick="showPopup('Casual Blazer', 'https://i.pinimg.com/originals/2f/13/0b/2f130b3d0463aeefa0a8d4ca7dd7116d.jpg')">
             <img src="https://i.pinimg.com/originals/2f/13/0b/2f130b3d0463aeefa0a8d4ca7dd7116d.jpg" alt="Casual Blazer">
-            <h3 style="font-size: 56px;">Casual Blazer</h3> <!-- Increased font size -->
-            <p style="font-size: 44px;">Rs. 2,999</p> <!-- Increased font size -->
-            <p style="font-size: 36px;">Stylish casual blazer for all occasions.</p> <!-- Increased font size -->
+            <h3 style="font-size: 28px;">Casual Blazer</h3> <!-- Increased font size -->
+            <p style="font-size: 22px;">Rs. 2,999</p> <!-- Increased font size -->
+            <p style="font-size: 18px;">Stylish casual blazer for all occasions.</p> <!-- Increased font size -->
             <button class="order-button">Order Now</button>
         </div>
         <div class="product" onclick="showPopup('Casual Attire', 'https://www.weddingpakistani.com/wp-content/uploads/2015/08/Dress.jpg')">
             <img src="https://www.weddingpakistani.com/wp-content/uploads/2015/08/Dress.jpg" alt="Casual Attire">
-            <h3 style="font-size: 56px;">Casual Attire</h3> <!-- Increased font size -->
-            <p style="font-size: 44px;">Rs. 1,199</p> <!-- Increased font size -->
-            <p style="font-size: 36px;">Comfortable casual attire for everyday use.</p> <!-- Increased font size -->
+            <h3 style="font-size: 28px;">Casual Attire</h3> <!-- Increased font size -->
+            <p style="font-size: 22px;">Rs. 1,199</p> <!-- Increased font size -->
+            <p style="font-size: 18px;">Comfortable casual attire for everyday use.</p> <!-- Increased font size -->
             <button class="order-button">Order Now</button>
         </div>
     </div>
@@ -215,7 +209,7 @@
     <div class="popup-content" onclick="event.stopPropagation();">
         <span class="close" onclick="closePopup()">&times;</span>
         <div class="image-container">
-            <img id="popupImage" onclick="closePopup()" style="max-height: 80vh;"> <!-- Adjusted for screen size -->
+            <img id="popupImage" onclick="closePopup()" style="height: 2000px;"> <!-- Increased height -->
         </div>
         <a id="whatsappLink" href="#" class="order-button">Place Order</a>
     </div>
