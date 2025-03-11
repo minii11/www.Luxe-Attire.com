@@ -580,6 +580,179 @@ p {
     </a>
 
 
+<section style="font-family: 'Roboto', sans-serif; margin: 0; width: 100%; max-width: 400px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 10px;">
+    <div style="background-color: #f0f0f0; padding: 10px; text-align: center;">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 500;">Luxy Attire Reviews</h2>
+    </div>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <h3 style="margin: 0; font-size: 16px;">Overall Rating</h3>
+        <div style="font-size: 48px; font-weight: 700; color: #333;" id="rating">4.7</div>
+        <div style="font-size: 24px; color: #ff9800; margin-top: 5px;">★★★★☆</div>
+        <p style="font-size: 14px; margin-top: 5px; color: #555;">based on 50 reviews</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; font-size: 16px;">
+        Happy Customers: <span id="customerCount">15,340</span>
+        <div style="height: 20px; background-color: #ddd; border-radius: 5px; margin: 10px 0; overflow: hidden;">
+            <div style="height: 100%; background-color: #ff9800; width: 70%;" id="customerBar"></div>
+        </div>
+        <button id="happyButton" onclick="updateCustomerCount('happy')" style="cursor: pointer; margin: 5px;">Happy</button>
+        <button id="sadButton" onclick="updateCustomerCount('sad')" style="cursor: pointer; margin: 5px;">Sad</button>
+        <div style="text-align: center; color: green; font-weight: bold; display: none;" id="thankYouMessage">Thanks for your feedback!</div>
+    </div>
+
+    <div style="padding: 10px;">
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">Excellent
+                <div style="height: 10px; background-color: #ddd; border-radius: 5px; flex-grow: 1; margin-left: 10px; overflow: hidden;">
+                    <div style="height: 100%; background-color: #ff9800; width: 70%;"></div>
+                </div>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">Good
+                <div style="height: 10px; background-color: #ddd; border-radius: 5px; flex-grow: 1; margin-left: 10px; overflow: hidden;">
+                    <div style="height: 100%; background-color: #ff9800; width: 50%;"></div>
+                </div>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">Average
+                <div style="height: 10px; background-color: #ddd; border-radius: 5px; flex-grow: 1; margin-left: 10px; overflow: hidden;">
+                    <div style="height: 100%; background-color: #ff9800; width: 30%;"></div>
+                </div>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">Below Average
+                <div style="height: 10px; background-color: #ddd; border-radius: 5px; flex-grow: 1; margin-left: 10px; overflow: hidden;">
+                    <div style="height: 100%; background-color: #ff9800; width: 10%;"></div>
+                </div>
+            </li>
+            <li style="display: flex; align-items: center; margin-bottom: 5px;">Poor
+                <div style="height: 10px; background-color: #ddd; border-radius: 5px; flex-grow: 1; margin-left: 10px; overflow: hidden;">
+                    <div style="height: 100%; background-color: #ff9800; width: 5%;"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="reviews" style="padding-left: 10px;">
+        <div class="review" id="review1" style="display: block;">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+            <div style="display: inline-block; vertical-align: middle;">
+                <h3 style="margin: 0; font-size: 16px;">Ali Khan</h3>
+                <div style="font-size: 24px; color: #ff9800;">★★★★★</div>
+                <p style="font-size: 14px;">I absolutely love my new outfit! The quality is fantastic, and it fits perfectly. I received so many compliments!</p>
+                <p style="font-size: 12px; color: #555;">Lahore / Jan 10, 2023</p>
+            </div>
+        </div>
+        <div class="review" id="review2" style="display: block;">
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+            <div style="display: inline-block; vertical-align: middle;">
+                <h3 style="margin: 0; font-size: 16px;">Sara Ahmed</h3>
+                <div style="font-size: 24px; color: #ff9800;">★★★★★</div>
+                <p style="font-size: 14px;">The customer service was incredible! I found the perfect dress for my friend's wedding, and it arrived on time!</p>
+                <p style="font-size: 12px; color: #555;">Karachi / Feb 15, 2023</p>
+            </div>
+        </div>
+        <div class="review" id="review3" style="display: none;">
+            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+            <div style="display: inline-block; vertical-align: middle;">
+                <h3 style="margin: 0; font-size: 16px;">Usman Malik</h3>
+                <div style="font-size: 24px; color: #ff9800;">★★★★☆</div>
+                <p style="font-size: 14px;">Great selection of outfits! I had a small issue with sizing, but the team was very helpful in resolving it.</p>
+                <p style="font-size: 12px; color: #555;">Islamabad / Mar 5, 2023</p>
+            </div>
+        </div>
+        <div class="review" id="review4" style="display: none;">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+            <div style="display: inline-block; vertical-align: middle;">
+                <h3 style="margin: 0; font-size: 16px;">Fatima Noor</h3>
+                <div style="font-size: 24px; color: #ff9800;">★★☆☆☆</div>
+                <p style="font-size: 14px;">The quality was decent, but I expected a bit more from the fabric.!</p>
+                <p style="font-size: 12px; color: #555;">Peshawar / Apr 12, 2023</p>
+            </div>
+        </div>
+        <div class="review" id="review5" style="display: none;">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+            <div style="display: inline-block; vertical-align: middle;">
+                <h3 style="margin: 0; font-size: 16px;">Bilal Ahmed</h3>
+                <div style="font-size: 24px; color: #ff9800;">★★★☆☆</div>
+                <p style="font-size: 14px;">Great experience overall! Just had a slight delay in shipping, but worth the wait!</p>
+                <p style="font-size: 12px; color: #555;">Faisalabad / May 22, 2023</p>
+            </div>
+        </div>
+        <div class="review" id="review6" style="display: none;">
+            <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User Avatar" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;">
+            <div style="display: inline-block; vertical-align: middle;">
+                <h3 style="margin: 0; font-size: 16px;">Hina Raza</h3>
+                <div style="font-size: 24px; color: #ff9800;">★★★★☆</div>
+                <p style="font-size: 14px;">The styles are modern and chic! I always find something unique to wear!</p>
+                <p style="font-size: 12px; color: #555;">Multan / Jun 30, 2023</p>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; color: #007BFF; cursor: pointer; padding: 10px 0;" id="showMore" onclick="showMoreReviews()">Show More Reviews</div>
+</section>
+
+<script>
+// Basic rating animation
+let rating = 0;
+const ratingElement = document.getElementById('rating');
+
+function animateRating() {
+    const targetRating = 4.7;
+    const interval = setInterval(() => {
+        if (rating < targetRating) {
+            rating += 0.1;
+            ratingElement.textContent = rating.toFixed(1);
+        } else {
+            clearInterval(interval);
+        }
+    }, 50);
+}
+
+animateRating();
+
+// Happy Customers counter
+const customerCountElement = document.getElementById('customerCount');
+const customerBar = document.getElementById('customerBar');
+let customerCount = 15340;
+let feedbackGiven = false;
+
+function updateCustomerCount(feeling) {
+    if (!feedbackGiven) {
+        if (feeling === 'happy') {
+            customerCount++;
+        } else if (feeling === 'sad') {
+            customerCount = Math.max(0, customerCount - 1); // Prevent negative count
+        }
+        
+        customerCountElement.textContent = customerCount.toLocaleString();
+        
+        // Update the customer bar width
+        const barWidth = Math.min((customerCount / 20000) * 100, 100); // Adjust max width as needed
+        customerBar.style.width = barWidth + '%';
+
+        // Show thank you message
+        document.getElementById('thankYouMessage').style.display = 'block';
+        feedbackGiven = true; // Prevent further feedback
+        document.getElementById('happyButton').disabled = true; // Disable button
+        document.getElementById('sadButton').disabled = true; // Disable button
+    }
+}
+
+function showMoreReviews() {
+    const reviews = document.querySelectorAll('.review');
+    reviews.forEach((review, index) => {
+        if (index >= 2) { // Show all reviews after the first two
+            review.style.display = 'block';
+        }
+    });
+    document.getElementById('showMore').style.display = 'none'; // Hide the "Show More" button
+}
+
+// Initially show only the first two reviews
+document.getElementById('review1').style.display = 'block';
+document.getElementById('review2').style.display = 'block';
+</script>
+    
   <section class="saving_section ">
     <div class="box">
       <div class="container-fluid">
