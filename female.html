@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Female Clothing Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .section {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-title {
+            font-size: 36px; /* Increased font size */
+            font-weight: bold;
+        }
+        .view-all-button {
+            background-color: #ff4081; /* Pink color */
+            color: white;
+            border: none;
+            padding: 16px 32px; /* Increased padding */
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px; /* Increased font size */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 45%; /* Two products per row */
+            margin: 10px 0;
+            padding: 16px; /* Increased padding */
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%; /* Maintain aspect ratio */
+            height: 240px; /* Increased height for uniformity */
+            object-fit: contain; /* Ensure the entire image is visible */
+            border-radius: 8px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: white;
+            padding: 48px; /* Increased padding */
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            max-width: 90%; /* Responsive width for mobile */
+            width: auto; /* Allow image to take full width */
+        }
+        .image-container {
+            width: 100%;
+            max-height: 100%; /* Remove max height restriction */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide overflow */
+        }
+        .image-container img {
+            max-width: 100%; /* Ensure it doesn't exceed container */
+            max-height: 100%; /* Adjust height to fit */
+            object-fit: contain; /* Maintain aspect ratio */
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 32px; /* Increased font size */
+        }
+        .order-button {
+            background: linear-gradient(to right, #ff4081, #ffeb3b); /* Pink to Yellow gradient */
+            color: white;
+            border: none;
+            padding: 16px 32px; /* Increased padding */
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 24px; /* Increased margin to ensure visibility */
+            width: 100%; /* Full width for better visibility */
+            font-size: 30px; /* Increased font size */
+        }
+
+        @keyframes boxGlow {
+            0% {
+                box-shadow: 0 0 10px yellow, 0 0 20px pink;
+            }
+            100% {
+                box-shadow: 0 0 20px yellow, 0 0 30px pink;
+            }
+        }
+
+        .glow-box {
+            animation: boxGlow 1.5s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+
+    <section style="text-align: center; margin-bottom: 20px;">
+        <div style="font-size: 60px; font-family: 'Arial', sans-serif; color: #D81B60; font-weight: bold; text-shadow: 3px 3px 8px rgba(255, 20, 147, 0.7);">
+            ✨ Explore Our Fashion Wonderland!✨
+        </div>
+        <div style="font-size: 50px; font-family: 'Arial', sans-serif; color: #555; margin-top: 5px;">
+            Discover the latest trends and styles tailored just for you!
+        </div>
+    </section>
+    <section style="display: flex; justify-content: space-between; padding: 10px;">
+        <a href="male.html" class="glow-box" style="width: 22%; margin: 5px; text-align: center; border-radius: 10px; padding: 32px; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8d5e5, #d3d3d3); text-decoration: none; color: inherit;">
+            <div style="font-size: 120px; margin-bottom: 10px; text-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;">👔</div>
+            <div style="font-weight: bold; color: #D81B60; font-size: 18px;">Male Clothing</div>
+        </a>
+        <a href="female.html" class="glow-box" style="width: 22%; margin: 5px; text-align: center; border-radius: 10px; padding: 32px; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8d5e5, #d3d3d3); text-decoration: none; color: inherit;">
+            <div style="font-size: 120px; margin-bottom: 10px; text-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;">👗</div>
+            <div style="font-weight: bold; color: #D81B60; font-size: 24px;">Female Clothing</div>
+        </a>
+        <a href="children.html" class="glow-box" style="width: 22%; margin: 5px; text-align: center; border-radius: 10px; padding: 32px; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8d5e5, #d3d3d3); text-decoration: none; color: inherit;">
+            <div style="font-size: 120px; margin-bottom: 10px; text-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;">👕</div>
+            <div style="font-weight: bold; color: #D81B60; font-size: 24px;">Children's Clothing</div>
+        </a>
+        <a href="c.html" class="glow-box" style="width: 22%; margin: 5px; text-align: center; border-radius: 10px; padding: 32px; position: relative; overflow: hidden; background: linear-gradient(135deg, #f8d5e5, #d3d3d3); text-decoration: none; color: inherit;">
+            <div style="font-size: 120px; margin-bottom: 10px; text-shadow: 0 0 10px pink, 0 0 20px pink, 0 0 30px pink;">💄</div>
+            <div style="font-weight: bold; color: #D81B60; font-size: 24px;">Cosmetics</div>
+        </a>
+    </section>
+
+<!-- Female Clothing Section -->
+<div class="section">
+    <div class="section-header">
+        <div class="section-title" style="font-size: 50px;">Female Clothing Section</div> <!-- Increased font size -->
+        <button class="view-all-button">Explore Our Collection</button>
+    </div>
+    <div class="container" id="femaleProducts">
+        <div class="product" onclick="showPopup('Elegant Dress', 'https://i.pinimg.com/originals/d8/b7/3a/d8b73a86791d68feee6a7135eb6e71e5.jpg')">
+            <img src="https://i.pinimg.com/originals/d8/b7/3a/d8b73a86791d68feee6a7135eb6e71e5.jpg" alt="Elegant Dress">
+            <h3 style="font-size: 28px;">Elegant Dress</h3>
+            <p style="font-size: 25px;">Rs. 3,499</p>
+            <p style="font-size: 18px;">Stylish dress for special occasions.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        <div class="product" onclick="showPopup('Blue Pakistani Dress', 'https://cdn.shopify.com/s/files/1/1762/5129/files/pakistani-women-in-blue-dree.jpg?v=1656045368')">
+            <img src="https://cdn.shopify.com/s/files/1/1762/5129/files/pakistani-women-in-blue-dree.jpg?v=1656045368" alt="Blue Pakistani Dress">
+            <h3 style="font-size: 28px;">Blue Pakistani Dress</h3>
+            <p style="font-size: 25px;">Rs. 4,999</p>
+            <p style="font-size: 18px;">Traditional dress with elegant design.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        <div class="product" onclick="showPopup('Dark Teal Georgette Suit', 'https://assets2.andaazfashion.com/media/catalog/product/d/a/dark-teal-green-georgette-sharara-suit-with-zari-work-lstv04617-1.jpg')">
+            <img src="https://assets2.andaazfashion.com/media/catalog/product/d/a/dark-teal-green-georgette-sharara-suit-with-zari-work-lstv04617-1.jpg" alt="Dark Teal Georgette Suit">
+            <h3 style="font-size: 28px;">Dark Teal Georgette Suit</h3>
+            <p style="font-size: 25px;">Rs. 5,499</p>
+            <p style="font-size: 18px;">Beautiful suit with intricate work.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        <div class="product" onclick="showPopup('Stylish Dress', 'https://th.bing.com/th/id/OIP.1TiSVOlm6U2gwdxqFeayrQHaQA?w=161&h=349&c=7&r=0&o=5&dpr=1.8&pid=1.7')">
+            <img src="https://th.bing.com/th/id/OIP.1TiSVOlm6U2gwdxqFeayrQHaQA?w=161&h=349&c=7&r=0&o=5&dpr=1.8&pid=1.7" alt="Stylish Dress">
+            <h3 style="font-size: 28px;">Stylish Dress</h3>
+            <p style="font-size: 25px;">Rs. 2,999</p>
+            <p style="font-size: 18px;">Perfect for casual outings.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        <div class="product" onclick="showPopup('Traditional Pakistani Dress', 'https://www.fashionfactory.com.au/wp-content/uploads/2023/05/Traditional-Pakistani-Clothing-in-Australia.webp')">
+            <img src="https://www.fashionfactory.com.au/wp-content/uploads/2023/05/Traditional-Pakistani-Clothing-in-Australia.webp" alt="Traditional Pakistani Dress">
+            <h3 style="font-size: 28px;">Traditional Pakistani Dress</h3>
+            <p style="font-size: 25px;">Rs. 4,299</p>
+            <p style="font-size: 18px;">Classic design with modern touch.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        <div class="product" onclick="showPopup('Elegant Evening Gown', 'https://cdn.pixabay.com/photo/2021/03/15/17/40/ladies-dress-wear-6097570_1280.jpg')">
+            <img src="https://cdn.pixabay.com/photo/2021/03/15/17/40/ladies-dress-wear-6097570_1280.jpg" alt="Elegant Evening Gown">
+            <h3 style="font-size: 28px;">Elegant Evening Gown</h3>
+            <p style="font-size: 25px;">Rs. 3,199</p>
+            <p style="font-size: 18px;">Gorgeous gown for evening events.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup" id="popup" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation();">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="image-container">
+            <img id="popupImage" onclick="closePopup()">
+        </div>
+        <a id="whatsappLink" href="#" class="order-button">Place Order</a>
+    </div>
+</div>
+
+<script>
+    function showPopup(title, imageUrl) {
+        document.getElementById('popupImage').src = imageUrl;
+        document.getElementById('whatsappLink').href = `https://wa.me/923558346493?text=I%20want%20to%20order%20${encodeURIComponent(title)}`;
+        document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
