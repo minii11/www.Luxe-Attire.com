@@ -194,7 +194,7 @@ h1 {
     text-align: center;
     color: grey;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 h2 {
@@ -436,16 +436,22 @@ p {
         updateText(); // Initial call
     </script>
 </div>
-       <section style="background-color: pink; border: 5px solid white; overflow: hidden; white-space: nowrap; position: relative; padding: 10px; width: 100%; max-width: 100vw;">
-    <div style="animation: moveText 25s linear infinite; font-size: 4vw; color: #FFD700; text-shadow: 0 0 5px black; display: inline-block; white-space: nowrap;">
+ <section style="background-color: pink; border: 5px solid white; overflow: hidden; white-space: nowrap; position: relative; padding: 10px; width: 100%; max-width: 100vw; display: flex; justify-content: center; align-items: center;">
+    <div style="animation: moveText 80s linear infinite; font-size: 5vw; color: #FFD700; text-shadow: 0 0 5px black; display: inline-block; white-space: nowrap; margin-left: 50%;">
         🛍️✨ Elevate Your Style with Exclusive Offers! ✨👗 | 🛒🔥 Unlock Premium Discounts Today! 🔥👠 | 🎉🌟 Grab Your Seasonal Essentials Now! 🌟🎊 | 💖👜 Discover Trendy New Arrivals! 👜💖 | 🎈👒 Shop Unique Styles at Unbeatable Prices! 👒🎈 | 🌼📦 Curated Fashion Must-Haves Await! 📦🌼 | 🎊🎁 Upgrade Your Wardrobe with Elegant Pieces! 🎁🎊 | 🛒💫 Limited Time Luxury Deals Just for You! 💫🛒 | 🚀👚 Explore the Latest Fashion Trends Before They're Gone! 👚🚀 | 🌺👡 Refresh Your Look with Exclusive Styles! 👡🌺 | 🎀🛍️ Celebrate Your Fashion Journey with Amazing Finds! 🛍️🎀
     </div>
 </section>
 
 <style>
     @keyframes moveText {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
+        0% { transform: translateX(0); } /* Start with half of the text visible */
+        100% { transform: translateX(-100%); } /* Move the entire text out of view */
+    }
+
+    @media (max-width: 768px) {
+        .moving-text {
+            margin-left: 50%; /* Adjust the margin to ensure half is visible */
+        }
     }
 </style>
 
